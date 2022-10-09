@@ -75,7 +75,6 @@
                 if (_lastOrientation != UIInterfaceOrientationUnknown) {
                     [[UIDevice currentDevice] setValue:[NSNumber numberWithInt:_lastOrientation] forKey:@"orientation"];
                     ((void (*)(CDVViewController*, SEL, NSMutableArray*))objc_msgSend)(vc,selector,result);
-                    [UINavigationController attemptRotationToDeviceOrientation];
                     if (@available(iOS 16.0, *)) {
                           #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_15_5 // Xcode 14 and iOS 16, or greater
                               [self.viewController setNeedsUpdateOfSupportedInterfaceOrientations];
